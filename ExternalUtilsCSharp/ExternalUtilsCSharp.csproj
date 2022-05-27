@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E294E4F8-DE32-42C1-8BFD-A3E488EC5820}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ExternalUtilsCSharp</RootNamespace>
+    <AssemblyName>ExternalUtilsCSharp</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Badr.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConfigObjects\IniConfigUtils.cs" />
+    <Compile Include="ConfigUtils.cs" />
+    <Compile Include="InputUtils\InputUtilities.cs" />
+    <Compile Include="InputUtils\KeyUtils.cs" />
+    <Compile Include="InputUtils\MouseEventExtArgs.cs" />
+    <Compile Include="InputUtils\MouseHook.cs" />
+    <Compile Include="MathUtils.cs" />
+    <Compile Include="MathObjects\Matrix.cs" />
+    <Compile Include="MemObjects\PE\COFFHeader.cs" />
+    <Compile Include="MemObjects\PE\DOSHeader.cs" />
+    <Compile Include="MemObjects\PE\PEInfo.cs" />
+    <Compile Include="MemObjects\PE\PEOptHeader.cs" />
+    <Compile Include="MemObjects\ScanResult.cs" />
+    <Compile Include="MemUtils.cs" />
+    <Compile Include="MiscObjects\CachedField.cs" />
+    <Compile Include="MiscObjects\CachedObject.cs" />
+    <Compile Include="MiscUtils.cs" />
+    <Compile Include="ProcUtils.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MathObjects\Vector2.cs" />
+    <Compile Include="MathObjects\Vector3.cs" />
+    <Compile Include="UI\Overlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UIObjects\Color.cs" />
+    <Compile Include="UI\UIObjects\ColorExtension.cs" />
+    <Compile Include="UI\Control.cs" />
+    <Compile Include="UI\UIObjects\Rectangle.cs" />
+    <Compile Include="UI\Renderer.cs" />
+    <Compile Include="Updater.cs" />
+    <Compile Include="WinAPI.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Badr.pfx" />
+    <None Include="classDiagram.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
